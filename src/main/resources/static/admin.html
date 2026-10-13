@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Cake Factory</title>
+  <link rel="stylesheet" href="./assets/css/admin.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <h1>Bakery Admin</h1>
+      <p>Overview, orders, products, and customer control.</p>
+    </header>
+
+    <nav id="admin-content-nav" class="panel hidden">
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#operations">Operations</a>
+        <a href="#products">Product Management</a>
+        <a href="#customers">Customer Details</a>
+        <a href="#reviews">Reviews</a>
+        <button id="admin-logout-btn" class="btn" type="button">Logout</button>
+      </div>
+    </nav>
+
+    <section id="admin-login-card" class="panel">
+      <h2>Admin Login</h2>
+      <form id="admin-login-form" class="grid two">
+        <input id="admin-username" type="text" placeholder="Username" required>
+        <input id="admin-password" type="password" placeholder="Password" required>
+        <button class="btn primary full" type="submit">Login</button>
+      </form>
+      <p id="admin-login-status" class="status"></p>
+    </section>
+
+    <section id="admin-content" class="hidden">
+      <section id="admin-notifications" class="panel">
+        <div class="head">
+          <button id="notification-toggle" class="notification-toggle" type="button" aria-expanded="false" aria-controls="notification-list">
+            <h2>Notifications</h2>
+            <span id="notification-count" class="badge">0</span>
+            <span id="notification-caret" class="notification-caret">?</span>
+          </button>
+        </div>
+        <div id="notification-list" class="notification-list hidden"></div>
+      </section>
+
+      <section id="overview" class="panel">
+        <h2>Overview</h2>
+        <div class="kpi-grid">
+          <article><span>Active Products</span><strong id="kpi-products">0</strong></article>
+          <article><span>Pending Orders</span><strong id="kpi-pending">0</strong></article>
+          <article><span>Successful Orders</span><strong id="kpi-success">0</strong></article>
+          <article><span>Reservations</span><strong id="kpi-reservations">0</strong></article>
+        </div>
+      </section>
+
+      <section id="operations" class="panel">
+        <div class="head">
+          <h2>Operations</h2>
+          <button id="refresh-orders" class="btn" type="button">Refresh</button>
+        </div>
+        <h3>Customer Orders</h3>
+        <table><thead><tr><th>ID</th><th>Customer</th><th>Phone</th><th>Order Items</th><th>Total</th><th>Status</th><th>Pickup</th><th>Payment</th><th>Actions</th></tr></thead><tbody id="orders-table-body"></tbody></table>
+        <h3>Reservations</h3>
+        <table><thead><tr><th>ID</th><th>Name</th><th>Contact Number</th><th>Guests</th><th>Date</th><th>Time</th><th>Status</th><th>Actions</th></tr></thead><tbody id="reservations-table-body"></tbody></table>
+        <h3 id="customize-orders-anchor">Customize Cake Orders</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Customer</th>
+              <th>Contact</th>
+              <th>Occasion</th>
+              <th>Weight</th>
+              <th>Layers</th>
+              <th>Flavor</th>
+              <th>Required Date</th>
+              <th>Payment</th>
+              <th>Specifications</th>
+              <th>Note</th>
+              <th>Reference</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="custom-orders-table-body"></tbody>
+        </table>
+      </section>
+
+      <section id="products" class="panel">
+        <h2>Product Management</h2>
+        <form id="add-product-form" class="grid">
+          <label class="field"><span>Product Name</span><input id="product-name" type="text" required></label>
+          <label class="field"><span>Category</span><select id="product-category" required>
+            <option value="Butter Cakes">Butter Cakes</option>
+            <option value="Signature Cakes">Signature Cakes</option>
+            <option value="Cake Pieces">Cake Pieces</option>
+          </select></label>
+          <label class="field"><span>Flavour</span><select id="product-flavour" required></select></label>
+          <label class="field"><span>Price</span><input id="product-price" type="number" min="1" step="0.01" required></label>
+          <label class="field"><span>Rating</span><input id="product-rating" type="number" min="0" max="5" step="0.1" value="4.5" required></label>
+          <label class="field"><span>Stock</span><input id="product-stock" type="number" min="0" value="0" required></label>
+          <label class="field full"><span>Image URL</span><input id="product-image-url" type="text" placeholder="Use URL or upload photo below"></label>
+          <label class="field full"><span>Upload Photo (PNG/JPG)</span><input id="product-image-file" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg"></label>
+          <label class="field full"><span>Description</span><textarea id="product-description" rows="2" required></textarea></label>
+          <button class="btn primary full" type="submit">Add New Product</button>
+        </form>
+        <p id="add-product-status" class="status"></p>
+        <h3>Edit Product Details</h3>
+        <form id="edit-product-form" class="grid">
+          <label class="field full"><span>Select Product</span><select id="edit-product-select" required></select></label>
+          <label class="field"><span>Product Name</span><input id="edit-product-name" type="text" required></label>
+          <label class="field"><span>Category</span><select id="edit-product-category" required>
+            <option value="Butter Cakes">Butter Cakes</option>
+            <option value="Signature Cakes">Signature Cakes</option>
+            <option value="Cake Pieces">Cake Pieces</option>
+          </select></label>
+          <label class="field"><span>Flavour</span><select id="edit-product-flavour" required></select></label>
+          <label class="field"><span>Price</span><input id="edit-product-price" type="number" min="1" step="0.01" required></label>
+          <label class="field"><span>Rating</span><input id="edit-product-rating" type="number" min="0" max="5" step="0.1" required></label>
+          <label class="field"><span>Stock</span><input id="edit-product-stock" type="number" min="0" required></label>
+          <label class="field full"><span>Image URL</span><input id="edit-product-image-url" type="text" placeholder="Use URL or upload photo below"></label>
+          <label class="field full"><span>Upload Photo (PNG/JPG)</span><input id="edit-product-image-file" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg"></label>
+          <label class="field full"><span>Description</span><textarea id="edit-product-description" rows="2" required></textarea></label>
+          <button class="btn primary full" type="submit">Save Product</button>
+          <button id="toggle-product-visibility-btn" class="btn full" type="button">Hide Product</button>
+          <button id="delete-product-btn" class="btn danger full" type="button">Delete Product</button>
+        </form>
+        <p id="edit-product-status" class="status"></p>
+      </section>
+
+      <section id="customers" class="panel">
+        <h2>Customer Details</h2>
+        <div class="split">
+          <div>
+            <table><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Status</th><th>Actions</th></tr></thead><tbody id="customers-table-body"></tbody></table>
+          </div>
+          <div>
+            <h3 id="customer-details-title">Select Customer</h3>
+            <h4>Pending Orders</h4>
+            <table><thead><tr><th>ID</th><th>Total</th><th>Date</th></tr></thead><tbody id="customer-pending-orders"></tbody></table>
+            <h4>Successful Orders</h4>
+            <table><thead><tr><th>ID</th><th>Total</th><th>Date</th></tr></thead><tbody id="customer-success-orders"></tbody></table>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="panel">
+        <div class="head">
+          <h2>Customer Reviews</h2>
+          <button id="refresh-reviews" class="btn" type="button">Refresh</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Review</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="reviews-table-body"></tbody>
+        </table>
+      </section>
+    </section>
+  </main>
+  <div id="admin-toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <script src="./assets/js/admin.js"></script>
+</body>
+</html>

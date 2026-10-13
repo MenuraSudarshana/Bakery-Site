@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Cake Factory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/checkout.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="announcement-bar">
+      <p>Complete your order details and confirm your pickup request.</p>
+    </header>
+
+    <nav class="navbar">
+      <a class="brand" href="./index.html">
+        <img src="./assets/images/logo.svg" alt="Cake Factory logo">
+      </a>
+
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./menu.html">Menus</a>
+        <a href="./cart.html">Cart</a>
+        <a id="my-account-link" href="./customer-account.html">My Account</a>
+      </div>
+    </nav>
+
+    <main class="checkout-page">
+      <section class="page-title">
+        <p class="eyebrow">Final Step</p>
+        <h1>Checkout</h1>
+      </section>
+
+      <section class="checkout-layout">
+        <div class="checkout-main">
+          <article class="checkout-card">
+            <div class="card-head">
+              <h2>Customer Details</h2>
+              <button class="small-btn" id="logout-btn" type="button">Logout</button>
+            </div>
+            <div class="customer-grid">
+              <div>
+                <span class="label">Name</span>
+                <strong id="customer-name">-</strong>
+              </div>
+              <div>
+                <span class="label">Email</span>
+                <strong id="customer-email">-</strong>
+              </div>
+              <div>
+                <span class="label">Phone</span>
+                <strong id="customer-phone">-</strong>
+              </div>
+              <div>
+                <span class="label">Address</span>
+                <strong id="customer-address">-</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="checkout-card">
+            <div class="card-head">
+              <h2>Pickup & Payment</h2>
+            </div>
+
+            <form id="checkout-form" novalidate>
+              <div class="form-grid">
+                <label class="field">
+                  <span>Pickup date</span>
+                  <input id="pickup-date" type="date">
+                  <small id="pickup-date-error" class="error-text"></small>
+                </label>
+
+                <label class="field">
+                  <span>Pickup time</span>
+                  <select id="pickup-time">
+                    <option value="">Select a time</option>
+                    <option>09:00 AM</option>
+                    <option>11:00 AM</option>
+                    <option>01:00 PM</option>
+                    <option>03:00 PM</option>
+                    <option>05:00 PM</option>
+                  </select>
+                  <small id="pickup-time-error" class="error-text"></small>
+                </label>
+              </div>
+
+              <div class="payment-options">
+                <button class="payment-card active" type="button" data-payment="Pay at Pickup">Pay at Pickup</button>
+                <button class="payment-card" type="button" data-payment="Card on Collection">Card on Collection</button>
+                <button class="payment-card" type="button" data-payment="Home Delivery">Home Delivery</button>
+              </div>
+
+              <p id="checkout-status" class="status-message" aria-live="polite"></p>
+              <button class="place-order-btn" type="submit">Confirm Checkout</button>
+            </form>
+          </article>
+        </div>
+
+        <aside class="summary-panel">
+          <article class="summary-card">
+            <h2>Order Summary</h2>
+            <div class="summary-items" id="checkout-items"></div>
+
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="checkout-subtotal">Rs. 0.00</strong>
+            </div>
+
+            <div class="summary-row total">
+              <span>Total</span>
+              <strong id="checkout-total">Rs. 0.00</strong>
+            </div>
+          </article>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <script src="./assets/js/session-guard.js"></script>
+  <script src="./assets/js/checkout.js"></script>
+</body>
+</html>

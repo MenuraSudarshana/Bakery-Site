@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signature Cakes | Cake Factory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/signature-cakes.css">
+</head>
+<body>
+<div class="page-shell">
+  <header class="topbar"><p>Signature cake collection.</p></header>
+
+  <nav class="navbar">
+    <a class="brand" href="./index.html"><img src="./assets/images/logo.svg" alt="Cake Factory logo"></a>
+    <div class="nav-links">
+      <a href="./index.html">Home</a>
+      <a href="./menu.html">Menu</a>
+      <a href="#footer">Contact</a>
+    </div>
+  </nav>
+
+  <main class="catalog-page">
+    <section class="hero">
+      <p class="eyebrow">Cake Category</p>
+      <h1>Signature Cakes</h1>
+      <p>Only signature cake products are shown on this page.</p>
+    </section>
+
+    <section class="category-strip">
+      <a class="category-pill" href="./all-cakes.html">All Cakes</a>
+      <a class="category-pill" href="./butter-cakes.html">Butter Cake</a>
+      <a class="category-pill active" href="./signature-cakes.html">Signature Cake</a>
+      <a class="category-pill" href="./cake-pieces.html">Cake Pieces</a>
+    </section>
+
+    <section class="tools">
+      <input id="search-input" type="search" placeholder="Search signature cake by name or flavour">
+      <select id="sort-select">
+        <option value="default">Recommended</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="rating-high">Rating: High to Low</option>
+        <option value="name">Name: A to Z</option>
+      </select>
+    </section>
+
+    <section>
+      <div class="catalog-head">
+        <h2>Signature Cake Products</h2>
+        <p id="result-count">0 cakes found</p>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div>
+      <h3>Cake Factory</h3>
+      <p>No. 60, Yatinuwara Street, Kandy</p>
+    </div>
+    <div>
+      <p>081 237 6718</p>
+      <p>booking@cakefactory.com</p>
+    </div>
+  </footer>
+</div>
+
+<script src="./assets/js/session-guard.js"></script>
+<script src="./assets/js/signature-cakes.js"></script>
+</body>
+</html>
+

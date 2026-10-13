@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customize Cake | Cake Factory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/customize-cake.css">
+</head>
+<body>
+<div class="page-shell">
+  <header class="topbar">Design your dream cake and place your custom request.</header>
+  <nav class="navbar">
+    <a class="brand" href="./index.html"><img src="./assets/images/logo.svg" alt="Cake Factory"></a>
+    <div class="links">
+      <a href="./index.html">Home</a>
+      <a href="./menu.html">Menus</a>
+      <a href="./customer-account.html">My Account</a>
+    </div>
+  </nav>
+
+  <main class="layout">
+    <section class="intro-card">
+      <p class="eyebrow">Custom Orders</p>
+      <h1>Customize Your Cake</h1>
+      <p>Crafting sweet memories since 2005. Fill these details and place your request. Our team will contact you soon for final confirmation.</p>
+      <ul>
+        <li>Occasion and expected date</li>
+        <li>Weight, layers and flavor preferences</li>
+        <li>Design photo URL or image upload (optional)</li>
+        <li>Payment method and additional notes</li>
+      </ul>
+    </section>
+
+    <section class="form-card">
+      <form id="customCakeForm" novalidate>
+        <div class="grid">
+          <label>Occasion
+            <input id="occasion" type="text" placeholder="Birthday / Wedding / Anniversary" required>
+          </label>
+          <label>Weight
+            <input id="weight" type="text" placeholder="1kg / 1.5kg / 2kg" required>
+          </label>
+          <label>Required Date
+            <input id="requiredDate" type="date" required>
+          </label>
+          <label>Payment Method
+            <select id="paymentMethod" required>
+              <option value="">Select payment method</option>
+              <option value="CARD">Card</option>
+              <option value="COD">Cash on Delivery</option>
+              <option value="BANK_TRANSFER">Bank Transfer</option>
+            </select>
+          </label>
+          <label>Contact Number
+            <input id="contactNumber" type="tel" placeholder="07XXXXXXXX" required>
+          </label>
+          <label>How Many Layers
+            <input id="layers" type="number" min="1" max="8" value="1" required>
+          </label>
+          <label>Flavor Preference
+            <input id="flavor" type="text" placeholder="Chocolate / Vanilla / Red Velvet">
+          </label>
+          <label>Design Photo URL (Optional)
+            <input id="designPhotoUrl" type="url" placeholder="https://...">
+          </label>
+          <label>Upload Design Photo (Optional)
+            <input id="designPhotoFile" type="file" accept="image/*">
+          </label>
+        </div>
+        <label>Other Specifications
+          <textarea id="specifications" rows="4" placeholder="Theme color, writing text, toppings, allergens..."></textarea>
+        </label>
+        <label>Note
+          <textarea id="note" rows="3" placeholder="Any extra information"></textarea>
+        </label>
+
+        <button type="submit">Place Custom Order</button>
+        <p id="statusMessage" class="status"></p>
+      </form>
+    </section>
+  </main>
+</div>
+
+<script src="./assets/js/customize-cake.js"></script>
+</body>
+</html>

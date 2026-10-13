@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Cake Factory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Forum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/product.css">
+</head>
+<body>
+<div class="page-shell">
+    <header class="topbar">
+        <p>Fresh cakes, quick pickup, custom messages, and celebration add-ons in one place.</p>
+    </header>
+
+    <nav class="navbar">
+        <a class="brand" href="./index.html">
+            <img src="./assets/images/logo.svg" alt="Cake Factory logo">
+        </a>
+
+        <div class="nav-links">
+            <a href="./index.html" class="hover-underline"><span>Home</span></a>
+            <a href="./menu.html" class="hover-underline"><span>Menus</span></a>
+            <a href="#reviews" class="hover-underline"><span>Reviews</span></a>
+            <a href="#contact" class="hover-underline"><span>Contact</span></a>
+        </div>
+    </nav>
+
+    <main class="product-page">
+        <section class="hero-panel">
+            <div class="gallery-card">
+                <div class="gallery-main">
+                    <span class="badge" id="product-badge">Best Seller</span>
+                    <img id="product-img" src="./assets/images/product-1.png" alt="Cake preview">
+                </div>
+
+                <div class="gallery-thumbs" id="gallery-thumbs"></div>
+            </div>
+
+            <div class="info-card">
+                <div class="meta-row">
+                    <span class="category-tag" id="product-category">Signature Cake</span>
+                    <button class="icon-btn" id="favorite-btn" type="button" aria-label="Save product">
+                        <span aria-hidden="true">&#9825;</span>
+                    </button>
+                </div>
+
+                <h1 id="product-name">Orange White Choco-Chip Gateau</h1>
+
+                <div class="rating-row">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <span id="product-rating">4.8</span>
+                    <span class="dot"></span>
+                    <span id="delivery-text">Ready for pickup in 2 hours</span>
+                </div>
+
+                <div class="price-row">
+                    <span class="price" id="product-price">Rs. 2,000.00</span>
+                    <span class="price-note">Inclusive of standard decoration</span>
+                </div>
+
+                <p class="description" id="product-desc">
+                    A vibrant, zesty cake that blends bright orange flavor with smooth white chocolate chips and soft vanilla sponge.
+                </p>
+
+                <div class="option-grid">
+                    <label class="field">
+                        <span>Weight</span>
+                        <select id="weight-select"></select>
+                    </label>
+
+                    <label class="field">
+                        <span>Flavour</span>
+                        <select id="flavour-select"></select>
+                    </label>
+
+                    <label class="field">
+                        <span>Cream</span>
+                        <select id="cream-select"></select>
+                    </label>
+                </div>
+
+                <label class="message-toggle">
+                    <input id="cake-message-toggle" type="checkbox">
+                    <span>Add a message on the cake</span>
+                    <strong>+ Rs. 120</strong>
+                </label>
+
+                <textarea id="cake-message" class="message-box" rows="3" maxlength="60" placeholder="Write your short cake message here"></textarea>
+
+                <div class="purchase-row">
+                    <div class="qty-box">
+                        <button class="qty-btn" type="button" data-action="decrease">-</button>
+                        <span id="main-qty">1</span>
+                        <button class="qty-btn" type="button" data-action="increase">+</button>
+                    </div>
+
+                    <button class="cart-btn" id="add-to-cart" type="button">Add To Cart</button>
+                </div>
+
+                <div class="summary-strip">
+                    <div>
+                        <span class="summary-label">Estimated Total</span>
+                        <strong id="estimated-total">Rs. 2,000.00</strong>
+                    </div>
+                    <div>
+                        <span class="summary-label">Selected Item</span>
+                        <strong id="selected-weight">500 g</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="addons-section">
+            <div class="section-heading">
+                <p class="eyebrow">Make It Extra Special</p>
+                <h2>Party add-ons for a complete celebration</h2>
+            </div>
+
+            <div class="addons-grid" id="addons-grid"></div>
+        </section>
+
+        <section class="feature-banner">
+            <div class="feature-item">
+                <strong>Freshly baked</strong>
+                <span>Prepared daily with premium ingredients</span>
+            </div>
+            <div class="feature-item">
+                <strong>Custom finishing</strong>
+                <span>Choose flavour, cream, and cake message</span>
+            </div>
+            <div class="feature-item">
+                <strong>Quick pickup</strong>
+                <span>Simple ordering flow for busy customers</span>
+            </div>
+        </section>
+
+        <section class="related-section" id="related-products">
+            <div class="section-head-row">
+                <div class="section-heading">
+                    <p class="eyebrow">You May Also Like</p>
+                    <h2>More cakes from the same collection</h2>
+                </div>
+
+                <div class="slider-controls">
+                    <button class="slider-btn" id="related-prev" type="button" aria-label="Show previous cakes">&#8592;</button>
+                    <button class="slider-btn" id="related-next" type="button" aria-label="Show next cakes">&#8594;</button>
+                </div>
+            </div>
+
+            <div class="related-viewport">
+                <div class="related-grid" id="related-grid"></div>
+            </div>
+        </section>
+
+        <section class="reviews-section" id="reviews">
+            <div class="section-heading">
+                <p class="eyebrow">Customer Feedback</p>
+                <h2>Reviews that help customers decide faster</h2>
+            </div>
+
+            <div class="review-layout">
+                <form class="review-form">
+                    <h3>Add A Review</h3>
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <select>
+                        <option>Your Rating</option>
+                        <option>5 - Excellent</option>
+                        <option>4 - Very Good</option>
+                        <option>3 - Good</option>
+                    </select>
+                    <textarea rows="5" placeholder="Enter your comment"></textarea>
+                    <button type="button">Submit Review</button>
+                </form>
+
+                <div class="review-list" id="review-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div>
+            <h3>Cake Factory</h3>
+            <p>Designed for a cleaner, more attractive product ordering experience.</p>
+        </div>
+        <div>
+            <p>No. 60, Yatinuwara Street, Kandy</p>
+            <p>081 237 6718</p>
+            <p>booking@cakefactory.com</p>
+        </div>
+    </footer>
+</div>
+
+<div class="cart-drawer-backdrop" id="cart-backdrop"></div>
+
+<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
+    <div class="cart-drawer-header">
+        <h2>Cart Items</h2>
+        <button class="cart-close-btn" id="cart-close-btn" type="button" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cart-items"></div>
+
+    <div class="cart-drawer-footer">
+        <div class="cart-summary-row">
+            <span>Subtotal</span>
+            <strong id="cart-subtotal">Rs. 0.00</strong>
+        </div>
+
+        <div class="cart-footer-actions">
+            <a class="cart-footer-btn primary" href="./cart.html">Cart</a>
+            <a class="cart-footer-btn secondary" href="./login.html?next=./checkout.html">Checkout</a>
+        </div>
+    </div>
+</aside>
+
+  <script src="./assets/js/session-guard.js"></script>
+  <script src="./assets/js/product.js"></script>
+</body>
+</html>

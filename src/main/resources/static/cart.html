@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | Cake Factory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/cart.css">
+</head>
+<body>
+<div class="page-shell">
+  <header class="announcement-bar">
+    <p>Order online from the comfort of your home and collect your cakes fresh from Cake Factory.</p>
+  </header>
+
+  <nav class="navbar">
+    <a class="brand" href="./index.html">
+      <img src="./assets/images/logo.svg" alt="Cake Factory logo">
+    </a>
+
+    <div class="nav-links">
+      <a href="./index.html">Home</a>
+      <a href="./menu.html">Menus</a>
+      <a href="./product.html?id=4">Best Seller</a>
+      <a href="#footer-contact">Contact</a>
+    </div>
+
+    <a class="cart-indicator" href="./cart.html" aria-label="Open cart">
+      <span class="cart-icon">&#128722;</span>
+      <span class="cart-count" id="nav-cart-count">0</span>
+    </a>
+  </nav>
+
+  <main class="cart-page">
+    <section class="page-title">
+      <p class="eyebrow">Your Order</p>
+      <h1>Cart</h1>
+    </section>
+
+    <section class="cart-layout">
+      <div class="cart-main-card">
+        <div class="pending-order-panel is-hidden" id="pending-order-panel"></div>
+
+        <div class="cart-table-head">
+          <span>Product</span>
+          <span>Price</span>
+          <span>Quantity</span>
+          <span>Subtotal</span>
+          <span></span>
+        </div>
+
+        <div class="cart-list" id="cart-list"></div>
+
+<!--        <div class="coupon-panel">-->
+<!--          <h2>Apply Coupon</h2>-->
+<!--          <div class="coupon-form">-->
+<!--            <input id="coupon-input" type="text" placeholder="Enter coupon code">-->
+<!--            <button id="coupon-apply" type="button">Apply</button>-->
+<!--          </div>-->
+<!--          <p id="coupon-message">No coupons available at this time.</p>-->
+<!--        </div>-->
+      </div>
+
+      <aside class="cart-summary-card" id="cart-summary">
+        <h2>Cart Totals</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="summary-subtotal">Rs. 0.00</strong>
+        </div>
+
+        <div class="summary-row total">
+          <span>Total</span>
+          <strong id="summary-total">Rs. 0.00</strong>
+        </div>
+
+        <a class="checkout-btn" href="./login.html?next=./checkout.html">Proceed to Checkout</a>
+      </aside>
+    </section>
+
+    <section class="benefits-row">
+      <article class="benefit-card">
+        <img src="./assets/images/features-icon-1.png" alt="Value icon">
+        <div>
+          <h3>Value For Money</h3>
+          <p>Satisfying cakes at fair prices.</p>
+        </div>
+      </article>
+
+      <article class="benefit-card">
+        <img src="./assets/images/features-icon-2.png" alt="Quality icon">
+        <div>
+          <h3>Satisfied Customers</h3>
+          <p>Reliable quality for every order.</p>
+        </div>
+      </article>
+
+      <article class="benefit-card">
+        <img src="./assets/images/features-icon-3.png" alt="Security icon">
+        <div>
+          <h3>Secure Payments</h3>
+          <p>Safe and trusted checkout experience.</p>
+        </div>
+      </article>
+    </section>
+
+<!--    <section class="newsletter-panel">-->
+<!--      <div class="newsletter-copy">-->
+<!--        <h2>Subscribe to our news alerts</h2>-->
+<!--        <div class="newsletter-form">-->
+<!--          <input type="email" placeholder="Enter your email address">-->
+<!--          <button type="button">Subscribe</button>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <img src="./assets/images/Coffee-Chocolate-Gateau.png" alt="Chocolate cake">-->
+<!--    </section>-->
+  </main>
+
+
+  <footer class="footer" id="footer-contact">
+    <div class="footer-brand">
+      <img src="./assets/images/logo.svg" alt="Cake Factory logo">
+      <p>Cake Factory creates celebration cakes, slices, and custom pickup orders for everyday moments and special events.</p>
+    </div>
+
+    <div>
+      <h3>Our Products</h3>
+      <p>Cakes</p>
+      <p>Desserts</p>
+      <p>Savories</p>
+      <p>Beverages</p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <p><a href="./index.html">Home</a></p>
+      <p><a href="./menu.html">Menus</a></p>
+      <p><a href="./product.html?id=4">Product</a></p>
+      <p><a href="./cart.html">Cart</a></p>
+    </div>
+
+    <div>
+      <h3>Get In Touch</h3>
+      <p>No. 60, Yatinuwara Street, Kandy</p>
+      <p>081 237 6718</p>
+      <p>booking@cakefactory.com</p>
+    </div>
+  </footer>
+    </div>
+
+  <script src="./assets/js/session-guard.js"></script>
+  <script src="./assets/js/cart.js"></script>
+</body>
+</html>

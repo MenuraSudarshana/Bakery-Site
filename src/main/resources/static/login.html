@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Login | Cake Factory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="announcement-bar">
+      <p>Login to continue with your custom cake order securely.</p>
+    </header>
+
+    <nav class="navbar">
+      <a class="brand" href="./index.html">
+        <img src="./assets/images/logo.svg" alt="Cake Factory logo">
+      </a>
+
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./menu.html">Menus</a>
+        <a href="./cart.html">Cart</a>
+        <a href="#login-support">Support</a>
+      </div>
+    </nav>
+
+    <main class="login-page">
+      <section class="login-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Customer Login</p>
+          <h1>Login to My Account</h1>
+          <p class="lead">After login, go directly to your account to view placed orders, reservations, and request cancellations when needed.</p>
+
+          <div class="feature-list">
+            <article class="feature-card">
+              <strong>Order management</strong>
+              <span>Check your placed orders and reservation status in one place.</span>
+            </article>
+
+            <article class="feature-card">
+              <strong>Cancel request</strong>
+              <span>Send cancel requests for pending orders and reservations.</span>
+            </article>
+
+            <article class="feature-card">
+              <strong>Profile settings</strong>
+              <span>Update your details and password from your account page.</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="login-card">
+          <div class="card-head">
+            <p class="eyebrow" id="form-eyebrow">Welcome Back</p>
+            <h2 id="form-title">Login to continue</h2>
+            <p id="form-copy">Enter your customer account details below.</p>
+          </div>
+
+          <div class="account-switch">
+            <button class="switch-btn active" id="login-tab" type="button">Already have an account?</button>
+            <button class="switch-btn" id="signup-tab" type="button">Sign up as new customer</button>
+          </div>
+
+          <form id="customer-form" novalidate>
+            <label class="field signup-only is-hidden" id="name-field">
+              <span>Full name</span>
+              <input id="name" type="text" placeholder="Enter your full name" autocomplete="name">
+              <small id="name-error" class="error-text"></small>
+            </label>
+
+            <label class="field">
+              <span>Email address</span>
+              <input id="email" type="email" placeholder="Enter your email address" autocomplete="email">
+              <small id="email-error" class="error-text"></small>
+            </label>
+
+            <label class="field signup-only is-hidden" id="phone-field">
+              <span>Phone number</span>
+              <input id="phone" type="tel" inputmode="numeric" placeholder="Enter 10 digit phone number" autocomplete="tel">
+              <small id="phone-error" class="error-text"></small>
+            </label>
+
+            <label class="field signup-only is-hidden" id="address-field">
+              <span>Address</span>
+              <input id="address" type="text" placeholder="Enter your address" autocomplete="street-address">
+              <small id="address-error" class="error-text"></small>
+            </label>
+
+            <label class="field">
+              <span>Password</span>
+              <div class="password-wrap">
+                <input id="password" type="password" placeholder="Enter your password" autocomplete="current-password">
+                <button id="toggle-password" class="toggle-btn" type="button">Show</button>
+              </div>
+              <small id="password-error" class="error-text"></small>
+            </label>
+
+            <label class="field signup-only is-hidden" id="confirm-password-field">
+              <span>Confirm password</span>
+              <div class="password-wrap">
+                <input id="confirm-password" type="password" placeholder="Enter password again" autocomplete="new-password">
+                <button id="toggle-confirm-password" class="toggle-btn" type="button">Show</button>
+              </div>
+              <small id="confirm-password-error" class="error-text"></small>
+            </label>
+
+            <div class="form-row">
+              <label class="remember-row">
+                <input id="remember-me" type="checkbox">
+                <span>Remember me</span>
+              </label>
+              <a href="./cart.html" class="text-link">Back to cart</a>
+            </div>
+
+            <button class="login-btn" id="submit-btn" type="submit">Login and Continue</button>
+            <p id="status-message" class="status-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="support-strip" id="login-support">
+        <article>
+          <h3>Need help signing in?</h3>
+          <p>Use your customer email and password. New customers can create an account first.</p>
+        </article>
+        <article>
+          <h3>Direct account access</h3>
+          <p>This login opens your customer account directly, so you can manage existing orders without going to cart or checkout.</p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="./assets/js/login.js"></script>
+</body>
+</html>

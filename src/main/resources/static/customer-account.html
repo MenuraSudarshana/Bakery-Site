@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account | Cake Factory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/customer-account.css">
+</head>
+<body>
+<div class="page-shell">
+  <header class="topbar">Manage your account, orders and reservations.</header>
+  <nav class="navbar">
+    <a class="brand" href="./index.html"><img src="./assets/images/logo.svg" alt="Cake Factory"></a>
+    <div class="links">
+      <a href="./index.html">Home</a>
+      <a href="./menu.html">Menus</a>
+      <a href="./customize-cake.html">Customize Cake</a>
+      <a href="./checkout.html">Checkout</a>
+      <button id="logoutBtn" class="logout-btn" type="button">Logout</button>
+    </div>
+  </nav>
+
+  <main class="layout">
+    <section class="card full">
+      <div class="tabs">
+        <button id="tab-orders" class="tab-btn active" type="button">My Orders</button>
+        <button id="tab-reservations" class="tab-btn" type="button">Reservations</button>
+        <button id="tab-customize" class="tab-btn" type="button">Customize Cakes</button>
+        <button id="tab-reviews" class="tab-btn" type="button">My Reviews</button>
+        <button id="tab-profile" class="tab-btn" type="button">Profile Settings</button>
+      </div>
+
+      <div id="panel-orders">
+        <h2>My Orders</h2>
+        <p class="muted">Pending and successful orders are shown separately. You can update quantity, phone, pickup date/time, and payment for pending orders.</p>
+        <h3>Pending Orders</h3>
+        <div id="ordersPendingList" class="list-wrap"></div>
+        <h3>Successful Orders</h3>
+        <div id="ordersSuccessfulList" class="list-wrap"></div>
+      </div>
+
+      <div id="panel-reservations" class="is-hidden">
+        <h2>My Reservations</h2>
+        <p class="muted">Need a date/time or guest count change? Update your reservation directly.</p>
+        <h3>Reservations</h3>
+        <div id="reservationsList" class="list-wrap"></div>
+      </div>
+
+      <div id="panel-customize" class="is-hidden">
+        <h2>Customize Cake Requests</h2>
+        <p class="muted">See pending and successful customize orders separately. Pending orders can be edited and updated again.</p>
+        <h3>Pending Customize Orders</h3>
+        <div id="customizePendingList" class="list-wrap"></div>
+        <h3>Successful Customize Orders</h3>
+        <div id="customizeSuccessfulList" class="list-wrap"></div>
+        <h3>Cancelled Customize Orders</h3>
+        <div id="customizeCancelledList" class="list-wrap"></div>
+      </div>
+
+      <div id="panel-reviews" class="is-hidden">
+        <h2>My Reviews</h2>
+        <p class="muted">Add your food review and edit it later.</p>
+        <form id="reviewForm">
+          <input id="reviewId" type="hidden">
+          <label>Review
+            <textarea id="reviewText" required placeholder="Write your review about our food"></textarea>
+          </label>
+          <button type="submit">Save Review</button>
+        </form>
+        <p id="reviewStatus" class="status"></p>
+        <h3>Your Reviews</h3>
+        <div id="reviewsList" class="list-wrap"></div>
+      </div>
+
+      <div id="panel-profile" class="is-hidden">
+        <div class="profile-grid">
+          <section class="profile-card">
+            <h2>Update Profile</h2>
+            <form id="profileForm">
+              <label>Full Name <input id="name" type="text" required></label>
+              <label>Email (read only) <input id="email" type="email" readonly></label>
+              <label>Phone <input id="phone" type="tel" required></label>
+              <label>Address <input id="address" type="text" required></label>
+              <button type="submit">Save Profile</button>
+            </form>
+            <p id="profileStatus" class="status"></p>
+          </section>
+
+          <section class="profile-card">
+            <h2>Change Password</h2>
+            <form id="passwordForm">
+              <label>Current Password <input id="currentPassword" type="password" required></label>
+              <label>New Password <input id="newPassword" type="password" required></label>
+              <label>Confirm New Password <input id="confirmPassword" type="password" required></label>
+              <button type="submit">Update Password</button>
+            </form>
+            <p id="passwordStatus" class="status"></p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="updateModal" class="modal is-hidden" role="dialog" aria-modal="true" aria-labelledby="updateModalTitle">
+  <div class="modal-card">
+    <h3 id="updateModalTitle">Update Request</h3>
+    <p id="updateModalCopy" class="muted"></p>
+    <form id="updateModalForm" class="modal-form"></form>
+    <div class="modal-actions">
+      <button id="updateModalCancel" type="button" class="btn-secondary">Cancel</button>
+      <button id="updateModalSubmit" type="button">Update Order</button>
+    </div>
+  </div>
+</div>
+
+<script src="./assets/js/session-guard.js"></script>
+<script src="./assets/js/customer-account.js"></script>
+</body>
+</html>

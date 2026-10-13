@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Cake Factory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/contact.css">
+</head>
+<body>
+<div class="page-shell">
+  <header class="topbar">
+    <p>We would love to hear from you. Send your message and our team will reply quickly.</p>
+  </header>
+
+  <nav class="navbar">
+    <a class="brand" href="./index.html">
+      <img src="./assets/images/logo.svg" alt="Cake Factory logo">
+    </a>
+
+    <div class="nav-links">
+      <a href="./index.html" class="hover-underline"><span>Home</span></a>
+      <a href="./menu.html" class="hover-underline"><span>Menus</span></a>
+      <a href="./contact.html" class="hover-underline active"><span>Contact</span></a>
+    </div>
+  </nav>
+
+  <main class="contact-page">
+    <section class="contact-hero">
+      <h1>Get In Touch</h1>
+
+      <div class="contact-details">
+        <article>
+          <div class="icon-circle">&#9993;</div>
+          <h3>social@thefab.lk</h3>
+        </article>
+
+        <article>
+          <div class="icon-circle">&#9742;</div>
+          <h3>+94 11 205 7777</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-form-card">
+      <form id="contactForm" novalidate>
+        <input id="fullName" type="text" placeholder="Full Name" required>
+        <input id="email" type="email" placeholder="Email" required>
+        <textarea id="message" placeholder="Message" rows="6" required></textarea>
+
+        <button type="submit">SEND</button>
+        <p id="formMessage" class="form-message"></p>
+      </form>
+    </section>
+  </main>
+</div>
+
+<script src="./assets/js/contact.js"></script>
+</body>
+</html>
